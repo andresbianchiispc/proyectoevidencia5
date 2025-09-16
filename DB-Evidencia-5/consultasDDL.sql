@@ -8,7 +8,7 @@ CREATE TABLE usuarios(
 );
 
 CREATE TABLE dispositivos(
-	id_dispositivo INT PRIMARY KEY IDENTITY(1,1),
+	id_dispositivo INT PRIMARY KEY,
 	nombre_dispositivo VARCHAR(50),
 	tipo_dispositivo VARCHAR(50),
 	estado_dispositivo BIT,
@@ -17,15 +17,15 @@ CREATE TABLE dispositivos(
 );
 
 CREATE TABLE automatizaciones (
-    id_automatizacion INT PRIMARY KEY IDENTITY(1,1),
-    descripcion NVARCHAR(50),
-    condicion NVARCHAR(50),
+    id_automatizacion INT PRIMARY KEY,
+    descripcion VARCHAR(50),
+    condicion VARCHAR(50),
     id_usuario INT,
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario)
 );
 
 CREATE TABLE acciones (
-    id_accion INT PRIMARY KEY IDENTITY(1,1),
+    id_accion INT PRIMARY KEY,
     tipo_accion VARCHAR(50),
     valor_configurado VARCHAR(50),
     id_automatizacion INT,
