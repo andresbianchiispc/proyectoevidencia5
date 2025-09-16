@@ -5,6 +5,8 @@ class Usuario:
         self.password = password
         self.dispositivos = []
         self.automatizaciones = []
+        if not Usuario.validar_usuario(nombre, email, password):
+            raise ValueError("Datos de usuario inválidos.")
     
     def agregar_dispositivo(self, dispositivo):
         self.dispositivos.append(dispositivo)

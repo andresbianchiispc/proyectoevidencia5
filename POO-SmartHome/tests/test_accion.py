@@ -1,34 +1,22 @@
 from src.accion import Accion
-import pytest
 
-
-def test_crear_accion():
-    accion = Accion("comprar", 100)
-    assert accion.tipo_accion == "comprar"
-    assert accion.valor_configurado == 100
-
+def test_creacion_accion():
+    accion = Accion("Encender", 5)
+    assert accion.tipo_accion == "Encender"
+    assert accion.valor_configurado == 5
 
 def test_str():
-    accion = Accion("vender", 50)
-    assert str(accion) == "Accion: vender, Valor Configurado: 50"
+    accion = Accion("Apagar", 0)
+    assert str(accion) == "Accion: Apagar, Valor Configurado: 0"
 
-
-def test_getters():
-    accion = Accion("comprar", 200)
-    assert accion.get_tipo_accion() == "comprar"
-    assert accion.get_valor_configurado() == 200
-
-
-def test_setters():
-    accion = Accion("comprar", 100)
-    accion.set_tipo_accion("vender")
-    accion.set_valor_configurado(150)
-    
-    assert accion.get_tipo_accion() == "vender"
-    assert accion.get_valor_configurado() == 150
-
+def test_getters_setters():
+    accion = Accion("Encender", 10)
+    accion.set_tipo_accion("Apagar")
+    accion.set_valor_configurado(20)
+    assert accion.get_tipo_accion() == "Apagar"
+    assert accion.get_valor_configurado() == 20
 
 def test_realizar_accion():
-    accion = Accion("comprar", 75)
+    accion = Accion("Encender", 15)
     resultado = accion.realizar_accion()
-    assert resultado == "Realizando acción: comprar con valor: 75"
+    assert resultado == "Realizando acción: Encender con valor: 15"
