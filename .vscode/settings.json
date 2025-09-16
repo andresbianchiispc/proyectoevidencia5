@@ -1,0 +1,8 @@
+{
+    "python.analysis.extraPaths": [
+        "./POO-SmartHome/src"
+    ],
+    "python.testing.cwd": "${workspaceFolder}/POO-SmartHome",
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
