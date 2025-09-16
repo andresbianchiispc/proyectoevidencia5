@@ -1,7 +1,8 @@
 class Usuario:
-    def __init__(self, nombre, email):
+    def __init__(self, nombre, email, password):
         self.nombre = nombre
         self.email = email
+        self.password = password
         self.dispositivos = []
         self.automatizaciones = []
     
@@ -30,6 +31,9 @@ class Usuario:
     def set_email(self, email):
         self.email = email
 
+    def set_password(self, password):
+        self.password = password
+
     def ejecutar_automatizaciones(self):
         resultados = []
         for automatizacion in self.automatizaciones:
@@ -44,3 +48,12 @@ class Usuario:
     
     def __str__(self):
         return f"Usuario: {self.nombre}, Email: {self.email}"
+    
+    def validar_usuario(nombre, email, password):
+        if not nombre or not email or not password:
+            return False
+        if "@" not in email or "." not in email.split("@")[-1]:
+            return False
+        if len(password) < 6:
+            return False
+        return True
