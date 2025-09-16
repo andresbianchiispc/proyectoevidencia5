@@ -1,4 +1,4 @@
-from dispositivo import Dispositivo
+from src.dispositivo import Dispositivo
 
 def test_creacion_dispositivo():
     d = Dispositivo("Luz", "Apagado")

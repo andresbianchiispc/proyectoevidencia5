@@ -1,10 +1,10 @@
-from automatizacion import Automatizacion
-from accion import Accion
-from dispositivo import Dispositivo
+from src.automatizacion import Automatizacion
+from src.accion import Accion
+from src.dispositivo import Dispositivo
 
 def test_creacion_automatizacion():
     a = Automatizacion("Auto1")
-    assert a.nombre == "Auto1"
+    assert a.descripcion == "Auto1"
     assert a.acciones == []
 
 def test_agregar_accion():
